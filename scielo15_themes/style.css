@@ -1,5 +1,5 @@
 /*
-Theme Name: SciELO 15 Anos
+Theme Name: Eventos SciELO
 Theme URI:
 Author: SciELO
 Author URI: http://www.scielo.org/
@@ -121,7 +121,7 @@ body {
 }
 .singular #content,
 .left-sidebar.singular #content {
-	margin: -40px 0 7.6%;
+	margin: 0 0.5%;
 	position: relative;
 	width: auto;
 }
@@ -527,6 +527,7 @@ a:hover {
 	padding-bottom: 10px;
 	position: relative;
 	z-index: 2;
+	margin-top: 30px;
 }
 #site-title {
 	margin-right: 270px;
@@ -552,12 +553,12 @@ a:hover {
 #branding img {
 	height: auto;
 	margin-bottom: -7px;
+	max-width: 100%;
 }
 
 
 /* =Menu
 -------------------------------------------------------------- */
-
 #access {
 	background: #222; /* Show a solid color for older browsers */
 	background: -moz-linear-gradient(#252525, #0a0a0a);
@@ -638,18 +639,22 @@ a:hover {
 #access .current_page_item > a,
 #access .current_page_ancestor > a {
 	font-weight: bold;
+	background-image: url("images/seta.png");
+    background-position: center 27px;
+    background-repeat: no-repeat;
+    font-weight: bold;
 }
 
 /* Search Form */
-#branding #searchform {
+#searchform {
 	position: absolute;
 	right: 7.6%;
 	text-align: right;
 }
-#branding #searchform div {
+#searchform div {
 	margin: 0;
 }
-#branding #s {
+#s {
 	float: right;
 	-webkit-transition-duration: 400ms;
 	-webkit-transition-property: width, background;
@@ -662,35 +667,35 @@ a:hover {
 	-o-transition-timing-function: ease;
 	width: 200px;
 }
-#branding #s:focus {
+#s:focus {
 	background-color: #f9f9f9;
 	width: 200px;
 }
-#branding #searchsubmit {
+#searchsubmit {
 	display: none;
 }
-#branding .only-search #searchform {
+.only-search #searchform {
 	top: 5px;
 	z-index: 1;
 }
-#branding .only-search #s {
+.only-search #s {
 	background-color: #666;
 	border-color: #000;
 	color: #222;
 }
-#branding .only-search #s,
-#branding .only-search #s:focus {
+.only-search #s,
+.only-search #s:focus {
 	width: 85%;
 }
-#branding .only-search #s:focus {
+.only-search #s:focus {
 	background-color: #bbb;
 }
-#branding .with-image #searchform {
+.with-image #searchform {
 	top: auto;
 	bottom: -27px;
 	max-width: 195px;
 }
-#branding .only-search + #access div {
+.only-search + #access div {
 	padding-right: 205px;
 }
 
@@ -1090,11 +1095,11 @@ article.format-status .entry-content {
 /* Singular content styles for Posts and Pages */
 .singular .hentry {
 	border-bottom: none;
-	padding: 3.875em 0 0;
+	padding: 1.5em 0 0;
 	position: relative;
 }
 .singular.page .hentry {
-	padding: 3.5em 0 0;
+	padding: 1.5em 0 0;
 }
 .singular .entry-title {
 	color: #000;
@@ -2705,5 +2710,6 @@ p.comment-form-comment {
 }
 .search_field {
 	float: right;
-	margin-top: 70px;
+	margin-top: 20px;
+	margin-right: 70px;
 }
