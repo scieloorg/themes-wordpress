@@ -121,7 +121,7 @@ body {
 }
 .singular #content,
 .left-sidebar.singular #content {
-	margin: -40px 0 7.6%;
+	margin: 0 0.5%;
 	position: relative;
 	width: auto;
 }
@@ -559,7 +559,6 @@ a:hover {
 
 /* =Menu
 -------------------------------------------------------------- */
-
 #access {
 	background: #222; /* Show a solid color for older browsers */
 	background: -moz-linear-gradient(#252525, #0a0a0a);
@@ -640,6 +639,10 @@ a:hover {
 #access .current_page_item > a,
 #access .current_page_ancestor > a {
 	font-weight: bold;
+	background-image: url("images/seta.png");
+    background-position: center 27px;
+    background-repeat: no-repeat;
+    font-weight: bold;
 }
 
 /* Search Form */
@@ -1092,11 +1095,11 @@ article.format-status .entry-content {
 /* Singular content styles for Posts and Pages */
 .singular .hentry {
 	border-bottom: none;
-	padding: 3.875em 0 0;
+	padding: 1.5em 0 0;
 	position: relative;
 }
 .singular.page .hentry {
-	padding: 3.5em 0 0;
+	padding: 1.5em 0 0;
 }
 .singular .entry-title {
 	color: #000;

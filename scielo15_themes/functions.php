@@ -591,3 +591,14 @@ function twentyeleven_body_classes( $classes ) {
 }
 add_filter( 'body_class', 'twentyeleven_body_classes' );
 
+//toggle shortcode
+ function toggle_shortcode( $atts, $content = null ) {
+ extract( shortcode_atts(
+ array(
+ 'title' => 'Click To Open',
+ 'color' => ''
+ ),
+ $atts ) );
+ return '<h3><a href="#">'. $title .'</a></h3><div class="toggle_container">' . do_shortcode($content) . '</div>';
+ }
+ add_shortcode('toggle', 'toggle_shortcode');

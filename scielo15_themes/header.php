@@ -65,6 +65,33 @@
 	 */
 	wp_head();
 ?>
+
+<script type="text/javascript">
+
+	<!--
+
+	function toggle(obj) {
+
+		var el = document.getElementById(obj);
+
+		if ( el.style.display != "none" ) {
+
+			el.style.display = 'none';
+
+		}
+
+		else {
+
+			el.style.display = '';
+
+		}
+
+	}
+
+	-->
+
+</script>
+
 </head>
 <body <?php body_class(); ?>>
 <div id="wrapper" class="hfeed">
@@ -115,5 +142,8 @@
 					</nav><!-- #access -->
 					
 		</header><!-- #branding -->
+		
 		<div id="main">
+		<!-- #Plugin Slideshow -->
+		<?php do_action('slideshow_deploy', '79'); ?>
 				
