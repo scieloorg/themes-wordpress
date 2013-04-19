@@ -565,9 +565,6 @@ a:hover {
 	background: -o-linear-gradient(#252525, #0a0a0a);
 	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#252525), to(#0a0a0a)); /* older webkit syntax */
 	background: -webkit-linear-gradient(#252525, #0a0a0a);
-	-webkit-box-shadow: rgba(0, 0, 0, 0.4) 0px 1px 2px;
-	-moz-box-shadow: rgba(0, 0, 0, 0.4) 0px 1px 2px;
-	box-shadow: rgba(0, 0, 0, 0.4) 0px 1px 2px;
 	clear: both;
 	display: block;
 	float: left;
@@ -638,6 +635,15 @@ a:hover {
 }
 #access .current_page_item > a,
 #access .current_page_ancestor > a {
+	font-weight: bold;
+	background-image: url("images/seta.png");
+    background-position: center 27px;
+    background-repeat: no-repeat;
+    font-weight: bold;
+}
+
+/* SciELO Para atender o comportamento do plugin multi-idiomas */
+#access .current-menu-item > a {
 	font-weight: bold;
 	background-image: url("images/seta.png");
     background-position: center 27px;
@@ -749,7 +755,7 @@ a:hover {
 	font-weight: bold;
 	line-height: 1.5em;
 	padding-bottom: .3em;
-	padding-top: 15px;
+	padding-top: 5px;
 }
 .entry-title,
 .entry-title a {
@@ -776,7 +782,7 @@ a:hover {
 }
 .entry-content,
 .entry-summary {
-	padding: 1.625em 0 0;
+	padding: 0.625em 0 0;
 }
 .entry-content h1,
 .entry-content h2,

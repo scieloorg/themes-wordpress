@@ -144,6 +144,4 @@
 		</header><!-- #branding -->
 		
 		<div id="main">
-		<!-- #Plugin Slideshow -->
-		<?php do_action('slideshow_deploy', '79'); ?>
 				

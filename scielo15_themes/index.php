@@ -16,6 +16,8 @@ get_header(); ?>
 
 		<div id="primary">
 			<div id="content" role="main">
+			<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('SearchBox' . $current_language) ) : ?>
+        		<?php endif; ?>
 
 			<?php if ( have_posts() ) : ?>
 
