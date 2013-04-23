@@ -65,6 +65,33 @@
 	 */
 	wp_head();
 ?>
+
+<script type="text/javascript">
+
+	<!--
+
+	function toggle(obj) {
+
+		var el = document.getElementById(obj);
+
+		if ( el.style.display != "none" ) {
+
+			el.style.display = 'none';
+
+		}
+
+		else {
+
+			el.style.display = '';
+
+		}
+
+	}
+
+	-->
+
+</script>
+
 </head>
 <body <?php body_class(); ?>>
 <div id="wrapper" class="hfeed">
@@ -113,21 +140,8 @@
 						<?php /* Our navigation menu.  If one isn't filled out, wp_nav_menu falls back to wp_page_menu. The menu assiged to the primary position is the one used. If none is assigned, the menu with the lowest ID is used. */ ?>
 						<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 					</nav><!-- #access -->
-					<div class="search_field">
-					<?php
-						// Has the text been hidden?
-						if ( 'blank' == get_header_textcolor() ) :
-					?>
-						<div class="only-search<?php if ( ! empty( $header_image ) ) : ?> with-image<?php endif; ?>">
-						<?php get_search_form(); ?>
-						</div>
-					<?php
-						else :
-					?>
-						<?php get_search_form(); ?>
-					<?php endif; ?>
-				</div>
+					
 		</header><!-- #branding -->
-
-
+		
 		<div id="main">
+				
