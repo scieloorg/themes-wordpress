@@ -85,7 +85,7 @@ body {
 }
 #wrapper {
 	margin: auto;
-	max-width: 1000px;
+	width: 1000px;
 	background: none;
 	height: 1px;
 }
@@ -902,10 +902,6 @@ img.alignleft,
 img.alignright,
 img.aligncenter {
 	margin-bottom: 1.625em;
-}
-p img,
-.wp-caption {
-	margin-top: 0.4em;
 }
 .wp-caption {
 	background: #eee;

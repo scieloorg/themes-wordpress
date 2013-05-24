@@ -66,32 +66,31 @@
 	wp_head();
 ?>
 
-<script type="text/javascript">
+<!--Script função toggle-->
+	<script type="text/javascript">
+		<!--
 
-	<!--
+		function toggle(obj) {
 
-	function toggle(obj) {
+			var el = document.getElementById(obj);
 
-		var el = document.getElementById(obj);
+			if ( el.style.display != "none" ) {
 
-		if ( el.style.display != "none" ) {
+				el.style.display = 'none';
 
-			el.style.display = 'none';
+			}
+
+			else {
+
+				el.style.display = '';
+
+			}
 
 		}
 
-		else {
+		-->
 
-			el.style.display = '';
-
-		}
-
-	}
-
-	-->
-
-</script>
-
+	</script>
 </head>
 <body <?php body_class(); ?>>
 <div id="wrapper" class="hfeed">
