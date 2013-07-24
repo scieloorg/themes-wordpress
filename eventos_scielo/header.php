@@ -100,15 +100,13 @@
     </div>
 </div>
 	<div id="page" class="hfeed">
-
 		<span class="scielo_eventos_header"><img src="<?php bloginfo('template_directory'); ?>/images/headers/scielo_eventos_header.png"></span>
 		<header id="branding" role="banner">
-			
+				
 				<hgroup>
 					<h1 id="site-title"><span><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></span></h1>
 					<h2 id="site-description"><?php bloginfo( 'description' ); ?></h2>
 				</hgroup>
-				
 				<?php
 					// Check to see if the header image has been removed
 					$header_image = get_header_image();
@@ -125,11 +123,17 @@
 							// Houston, we have a new header image!
 							echo get_the_post_thumbnail( $post->ID, 'post-thumbnail' );
 						else : ?>
-						<img src="<?php header_image(); ?>" width="<?php echo HEADER_IMAGE_WIDTH; ?>" height="<?php echo HEADER_IMAGE_HEIGHT; ?>" alt="" />
+						<!--SciELO logos dos partners -->
+						<div style="position: relative;"><img src="<?php header_image(); ?>" width="<?php echo HEADER_IMAGE_WIDTH; ?>" height="<?php echo HEADER_IMAGE_HEIGHT; ?>" alt="" />
+						<a href="http://www.fapesp.br/" target="_blank" style="width: 110px; height: 50px; border: 0; position: absolute; top: 140px; left: 630px;"></a>
+						<a href="http://en.unesco.org/" target="_blank" style="width: 50px; height: 50px; border: 0; position: absolute; top: 140px; left: 750px;"></a>
+						<a href="http://portal.fiocruz.br/" target="_blank" style="width: 40px; height: 50px; border: 0; position: absolute; top: 140px; left: 805px;"></a>
+						<a href="http://www.ibict.br/" target="_blank" style="width: 30px; height: 50px; border: 0; position: absolute; top: 140px; left: 850px;"></a>
+						<a href="http://www.abecbrasil.org.br/" target="_blank" style="width: 100px; height: 50px; border: 0; position: absolute; top: 140px; left: 890px;"></a>
+						</div>
 					<?php endif; // end check for featured image or standard header ?>
 				</a>
 				<?php endif; // end check for removed header image ?>
-
 				
 					<nav id="access" role="navigation">
 						<h3 class="assistive-text"><?php _e( 'Main menu', 'twentyeleven' ); ?></h3>
@@ -139,7 +143,6 @@
 						<?php /* Our navigation menu.  If one isn't filled out, wp_nav_menu falls back to wp_page_menu. The menu assiged to the primary position is the one used. If none is assigned, the menu with the lowest ID is used. */ ?>
 						<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 					</nav><!-- #access -->
-					
 		</header><!-- #branding -->
 		
 		<div id="main">
