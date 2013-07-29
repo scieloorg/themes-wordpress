@@ -91,7 +91,7 @@ body {
 }
 #page {
 	margin: 2em auto;
-	max-width: 1000px;
+	width: 1000px;
 }
 #branding hgroup {
 	margin: 0 7.6%;
@@ -1498,7 +1498,7 @@ section.feature-image.large img {
 	display: block;
 	height: 328px;
 	margin: 1.625em -8.9% 20px;
-	max-width: 1000px;
+	width: 1000px;
 	padding: 0;
 	position: relative;
 	overflow: hidden;
@@ -2689,7 +2689,7 @@ p.comment-form-comment {
 	margin-right: -7.6%;
 	padding-left: -7.6%;
 	padding-right: -7.6%;
-	max-width: 1000px;
+	width: 1000px;
 }
 #ie7 section.featured-post {
 	margin-left: -7.6%;
