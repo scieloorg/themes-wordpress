@@ -94,10 +94,7 @@
 </head>
 <body <?php body_class(); ?>>
 <div id="wrapper" class="hfeed">
-<!--SciELO Language bar -->
-    <div id="language_bar">
-        <?php if (function_exists('mlf_links_to_languages')) mlf_links_to_languages(); ?>
-    </div>
+
 </div>
 	<div id="page" class="hfeed">
 		<span class="scielo_eventos_header"><img src="<?php bloginfo('template_directory'); ?>/images/headers/scielo_eventos_header.png"></span>
@@ -130,6 +127,10 @@
 						<a href="http://portal.fiocruz.br/" target="_blank" style="width: 40px; height: 50px; border: 0; position: absolute; top: 140px; left: 805px;"></a>
 						<a href="http://www.ibict.br/" target="_blank" style="width: 30px; height: 50px; border: 0; position: absolute; top: 140px; left: 850px;"></a>
 						<a href="http://www.abecbrasil.org.br/" target="_blank" style="width: 100px; height: 50px; border: 0; position: absolute; top: 140px; left: 890px;"></a>
+						<!--SciELO Language bar -->
+    <div id="language_bar">
+        <?php if (function_exists('mlf_links_to_languages')) mlf_links_to_languages(); ?>
+    </div>
 						</div>
 					<?php endif; // end check for featured image or standard header ?>
 				</a>

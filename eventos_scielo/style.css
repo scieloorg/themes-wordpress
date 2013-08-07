@@ -65,7 +65,17 @@ footer, header, hgroup, menu, nav, section {
 }
 
 #language_bar {
-	float: right;
+	margin-left: 360px;
+    margin-top: -105px;
+    position: absolute;
+}
+
+#language_bar a {
+	color: white;
+}
+
+#language_bar img {
+	margin-bottom: 0!important;
 }
 
 #language_bar ul {
