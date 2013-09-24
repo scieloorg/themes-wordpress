@@ -122,11 +122,12 @@
 						else : ?>
 						<!--SciELO logos dos partners -->
 						<div style="position: relative;"><img src="<?php header_image(); ?>" width="<?php echo HEADER_IMAGE_WIDTH; ?>" height="<?php echo HEADER_IMAGE_HEIGHT; ?>" alt="" />
-						<a href="http://www.fapesp.br/" target="_blank" style="width: 110px; height: 50px; border: 0; position: absolute; top: 140px; left: 630px;"></a>
-						<a href="http://en.unesco.org/" target="_blank" style="width: 50px; height: 50px; border: 0; position: absolute; top: 140px; left: 750px;"></a>
-						<a href="http://portal.fiocruz.br/" target="_blank" style="width: 40px; height: 50px; border: 0; position: absolute; top: 140px; left: 805px;"></a>
-						<a href="http://www.ibict.br/" target="_blank" style="width: 30px; height: 50px; border: 0; position: absolute; top: 140px; left: 850px;"></a>
-						<a href="http://www.abecbrasil.org.br/" target="_blank" style="width: 100px; height: 50px; border: 0; position: absolute; top: 140px; left: 890px;"></a>
+						<a href="http://www.fapesp.br/" target="_blank" style="width: 110px; height: 45px; border: 0; position: absolute; top: 100px; left: 670px;"></a>
+						<a href="http://en.unesco.org/" target="_blank" style="width: 50px; height: 45px; border: 0; position: absolute; top: 100px; left: 790px;"></a>
+						<a href="http://portal.fiocruz.br/" target="_blank" style="width: 120px; height: 45px; border: 0; position: absolute; top: 150px; left: 870px;"></a>
+						<a href="http://www.saude.gov.br/" target="_blank" style="width: 180px; height: 45px; border: 0; position: absolute; top: 150px; left: 670px;"></a>
+						<a href="http://www.ibict.br/" target="_blank" style="width: 30px; height: 45px; border: 0; position: absolute; top: 100px; left: 850px;"></a>
+						<a href="http://www.abecbrasil.org.br/" target="_blank" style="width: 100px; height: 45px; border: 0; position: absolute; top: 100px; left: 890px;"></a>
 						<!--SciELO Language bar -->
     <div id="language_bar">
         <?php if (function_exists('mlf_links_to_languages')) mlf_links_to_languages(); ?>
@@ -144,6 +145,7 @@
 						<?php /* Our navigation menu.  If one isn't filled out, wp_nav_menu falls back to wp_page_menu. The menu assiged to the primary position is the one used. If none is assigned, the menu with the lowest ID is used. */ ?>
 						<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 					</nav><!-- #access -->
+					<div style="float:right; padding-right:10px"><a href="http://thomsonreuters.com/" target="_blank"><img src="http://www.scielo15.org/wp-content/uploads/2013/08/thomson_reuters_logo.png"/ style="margin-right:10px"></a><a href="http://www.caboverde.com.br/" target="_blank"><img src="http://www.scielo15.org/wp-content/uploads/2013/09/caboverde.jpg"/></a><a href="http://www.charlesworth-group.com/" target="_blank"><img src="http://www.scielo15.org/wp-content/uploads/2013/09/charlesworth.jpg"/></a></div>
 		</header><!-- #branding -->
 		
 		<div id="main">

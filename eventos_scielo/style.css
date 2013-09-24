@@ -596,7 +596,7 @@ a:hover {
 	color: #eee;
 	display: block;
 	line-height: 3.333em;
-	padding: 0 1.2125em;
+	padding: 0 0.9125em;
 	text-decoration: none;
 	font-size: 90%;
 }
@@ -608,7 +608,7 @@ a:hover {
 	float: left;
 	margin: 0;
 	position: absolute;
-	top: 3.333em;
+	top: 3.033em;
 	left: 0;
 	width: 188px;
 	z-index: 99999;
@@ -621,7 +621,7 @@ a:hover {
 	background: #f9f9f9;
 	border-bottom: 1px dotted #ddd;
 	color: #444;
-	font-size: 13px;
+	font-size: 90%;
 	font-weight: normal;
 	height: auto;
 	line-height: 1.4em;
@@ -723,7 +723,7 @@ a:hover {
 
 #main {
 	clear: both;
-	padding: 1.625em 0 0;
+	padding: 0.325em 0 0;
 }
 .page-title {
 	color: #666;
@@ -1109,7 +1109,7 @@ article.format-status .entry-content {
 /* Singular content styles for Posts and Pages */
 .singular .hentry {
 	border-bottom: none;
-	padding: 1.5em 0 0;
+	padding: 0.5em 0 0;
 	position: relative;
 }
 .singular.page .hentry {
