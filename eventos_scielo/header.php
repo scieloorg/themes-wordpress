@@ -145,7 +145,7 @@
 						<?php /* Our navigation menu.  If one isn't filled out, wp_nav_menu falls back to wp_page_menu. The menu assiged to the primary position is the one used. If none is assigned, the menu with the lowest ID is used. */ ?>
 						<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 					</nav><!-- #access -->
-					<div style="float:right; padding-right:10px"><a href="http://thomsonreuters.com/" target="_blank"><img src="http://www.scielo15.org/wp-content/uploads/2013/08/thomson_reuters_logo.png"/ style="margin-right:10px"></a><a href="http://www.caboverde.com.br/" target="_blank"><img src="http://www.scielo15.org/wp-content/uploads/2013/09/caboverde.jpg"/></a><a href="http://www.charlesworth-group.com/" target="_blank"><img src="http://www.scielo15.org/wp-content/uploads/2013/09/charlesworth.jpg"/></a></div>
+					<div style="float:right; padding-right:10px"><a href="http://thomsonreuters.com/" target="_blank"><img src="http://www.scielo15.org/wp-content/uploads/2013/08/thomson_reuters_logo.png"/ style="margin-right:10px"></a><a href="http://www.caboverde.com.br/" target="_blank"><img src="http://www.scielo15.org/wp-content/uploads/2013/09/caboverde.jpg"/></a><a href="http://www.charlesworth-group.com/" target="_blank"><img src="http://www.scielo15.org/wp-content/uploads/2013/09/charlesworth.jpg"/></a><a href="http://www.editage.com.br/" target="_blank"><img src="http://www.scielo15.org/wp-content/uploads/2013/10/editage_logo.png"/></a></div>
 		</header><!-- #branding -->
 		
 		<div id="main">
