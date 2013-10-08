@@ -122,12 +122,14 @@
 						else : ?>
 						<!--SciELO logos dos partners -->
 						<div style="position: relative;"><img src="<?php header_image(); ?>" width="<?php echo HEADER_IMAGE_WIDTH; ?>" height="<?php echo HEADER_IMAGE_HEIGHT; ?>" alt="" />
-						<a href="http://www.fapesp.br/" target="_blank" style="width: 110px; height: 45px; border: 0; position: absolute; top: 100px; left: 670px;"></a>
-						<a href="http://en.unesco.org/" target="_blank" style="width: 50px; height: 45px; border: 0; position: absolute; top: 100px; left: 790px;"></a>
-						<a href="http://portal.fiocruz.br/" target="_blank" style="width: 120px; height: 45px; border: 0; position: absolute; top: 150px; left: 870px;"></a>
-						<a href="http://www.saude.gov.br/" target="_blank" style="width: 180px; height: 45px; border: 0; position: absolute; top: 150px; left: 670px;"></a>
-						<a href="http://www.ibict.br/" target="_blank" style="width: 30px; height: 45px; border: 0; position: absolute; top: 100px; left: 850px;"></a>
-						<a href="http://www.abecbrasil.org.br/" target="_blank" style="width: 100px; height: 45px; border: 0; position: absolute; top: 100px; left: 890px;"></a>
+						<a href="http://www.fapesp.br/" target="_blank" style="width: 110px; height: 42px; border: 0; position: absolute; top: 100px; left: 630px;"></a>
+						<a href="http://en.unesco.org/" target="_blank" style="width: 50px; height: 42px; border: 0; position: absolute; top: 100px; left: 745px;"></a>
+						<a href="http://portal.fiocruz.br/" target="_blank" style="width: 110px; height: 42px; border: 0; position: absolute; top: 150px; left: 885px;"></a>
+						<a href="http://www.saude.gov.br/" target="_blank" style="width: 160px; height: 42px; border: 0; position: absolute; top: 150px; left: 720px;"></a>
+						<a href="http://www.ibict.br/" target="_blank" style="width: 30px; height: 42px; border: 0; position: absolute; top: 150px; left: 640px;"></a>
+						<a href="http://fapunifesp.edu.br/" target="_blank" style="width: 35px; height: 42px; border: 0; position: absolute; top: 150px; left: 680px;"></a>
+						<a href="http://www.abecbrasil.org.br/" target="_blank" style="width: 100px; height: 42px; border: 0; position: absolute; top: 100px; left: 890px;"></a>
+						<a href="http://www.opensocietyfoundations.org/" target="_blank" style="width: 100px; height: 42px; border: 0; position: absolute; top: 100px; left: 790px;"></a>
 						<!--SciELO Language bar -->
     <div id="language_bar">
         <?php if (function_exists('mlf_links_to_languages')) mlf_links_to_languages(); ?>
