@@ -79,33 +79,35 @@ body .site {margin-top: 0; box-shadow:none; background: none;}
 .tv .wrapper {margin-top: -15px;}
 .tv .site-content {float: none;width: 100%; margin: 0;}
 .tv .published {font-size: 2em;}
+.tv .event-date {font-size: 2em; font-weight: 300;}
+.tv .time-range {font-size: 1.5em;margin-top:.5em;}
 .tv .entry-title {font-size: 5em; margin-bottom: 0 !important;}
 .tv .entry-title a {text-decoration: none; color:#000;}
-.tv .entry-summary {font-size:3em;}
+.tv .entry-summary {font-size:3em; height: 250px !important; overflow: hidden;}
 .tv .post-info {margin:80px 100px;width:80% !important;}
 .tv article {display: block;width: 1450px;height: 540px;margin-bottom:0px !important;border-bottom: none !important;}
 .tv .gradient {
-	display: block;width: 1450px;height: 540px;
-background: -moz-linear-gradient(top,  rgba(255,255,255,1) 9%, rgba(255,255,255,0.79) 28%, rgba(255,255,255,0) 100%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, left bottom, color-stop(9%,rgba(255,255,255,1)), color-stop(28%,rgba(255,255,255,0.79)), color-stop(100%,rgba(255,255,255,0))); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 9%,rgba(255,255,255,0.79) 28%,rgba(255,255,255,0) 100%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(top,  rgba(255,255,255,1) 9%,rgba(255,255,255,0.79) 28%,rgba(255,255,255,0) 100%); /* Opera 11.10+ */
-background: -ms-linear-gradient(top,  rgba(255,255,255,1) 9%,rgba(255,255,255,0.79) 28%,rgba(255,255,255,0) 100%); /* IE10+ */
-background: linear-gradient(to bottom,  rgba(255,255,255,1) 9%,rgba(255,255,255,0.79) 28%,rgba(255,255,255,0) 100%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9 */
-
-
+	display: block;width: 1450px;height: 1000px;
+	background: -moz-linear-gradient(top,  rgba(255,255,255,1) 9%, rgba(255,255,255,0.79) 28%, rgba(255,255,255,0) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(9%,rgba(255,255,255,1)), color-stop(28%,rgba(255,255,255,0.79)), color-stop(100%,rgba(255,255,255,0))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 9%,rgba(255,255,255,0.79) 28%,rgba(255,255,255,0) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(255,255,255,1) 9%,rgba(255,255,255,0.79) 28%,rgba(255,255,255,0) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(255,255,255,1) 9%,rgba(255,255,255,0.79) 28%,rgba(255,255,255,0) 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  rgba(255,255,255,1) 9%,rgba(255,255,255,0.79) 28%,rgba(255,255,255,0) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9 */
 }
+.tv .calp-agenda-widget-view {padding: 0 !important;}
+.tv .calp-event-title {font-size:.8rem;}
 .tv footer {display: none;}
 
 .right-block {width: 25%; float:right; height: 120px;}
-.right-block .date-block {margin: 40px 0;width: 35%;}
+.right-block .date-block {margin: 24px 0;width: 35%;}
 .right-block .date-block .time {text-align: center; font-size: 180%;}
 .right-block .widget_text {float: left;}
 
 
 #wpc-weather {font-family: 'Roboto', sans-serif !important;margin: 4px 0 0 0;}
 #wpc-weather .location_name {font-size: 100% !important;}
-#wpc-weather .climacon {margin-top:-8px;}
-#wpc-weather .time_temperature {margin-top:-39px;}
+#wpc-weather .time_temperature {margin-top:-46px;}
 #wpc-weather .short_condition {font-size: 12px;margin: 0px 0;}
+#wpc-weather .infos {display: none;}
