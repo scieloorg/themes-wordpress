@@ -97,8 +97,9 @@ body .site {margin-top: 0; box-shadow:none; background: none;}
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9 */
 }
 .tv .calp-agenda-widget-view {padding: 0 !important;}
-.tv .calp-event-title {font-size:.8rem;}
+.tv .entry-title .calp-event-title {font-size:.8rem !important;}
 .tv footer {display: none;}
+.tv .calp-container {display: none;}
 
 .right-block {width: 25%; float:right; height: 120px;}
 .right-block .date-block {margin: 24px 0;width: 35%;}
