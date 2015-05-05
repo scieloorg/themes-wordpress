@@ -81,7 +81,7 @@ body .site {margin-top: 0; box-shadow:none; background: none;}
 .tv .published {font-size: 2em;}
 .tv .event-date {font-size: 2em; font-weight: 300;}
 .tv .time-range {font-size: 1.5em;margin-top:.5em;}
-.tv .entry-title {font-size: 5em; margin-bottom: 0 !important;}
+.tv .entry-title {font-size: 5em; margin-bottom: 12px !important;}
 .tv .entry-title a {text-decoration: none; color:#000;}
 .tv .entry-summary {font-size:3em; height: 250px !important; overflow: hidden;}
 .tv .post-info {margin:80px 100px;width:80% !important;}
@@ -97,7 +97,7 @@ body .site {margin-top: 0; box-shadow:none; background: none;}
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9 */
 }
 .tv .calp-agenda-widget-view {padding: 0 !important;}
-.tv .tv-title .calp-event-title {font-size:1.5em !important;}
+.tv .entry-title .calp-event-title {font-size:1.05em !important;}
 .tv footer {display: none;}
 .tv .calp-container {display: none;}
 

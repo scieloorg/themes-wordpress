@@ -12,7 +12,49 @@
  * @since Twenty Twelve 1.0
  */
 
+// webservice para ser consumido pelo crontab que envia email com relatorio
+if(isset($_GET['type']) and $_GET['type'] == "json") {
+	
+	$today = strtotime(date("d M Y"));
+	$tomorrow = $today + (24 * 60 * 60);
+
+	if(isset($_GET['period']) and $_GET['period'] == 'nextweek') {
+	
+		$tomorrow = $today + (7 * 24 * 60 * 60);
+	
+	} elseif(isset($_GET['period']) and $_GET['period'] == 'lastweek') {
+
+		$tomorrow = $today;
+		$today = $today - (7 * 24 * 60 * 60);
+
+	}
+
+	$posts = get_posts("post_type=calp_event&posts_per_page=-1");
+
+	$output = array();
+	foreach($posts as $post) {
+
+		$event = Calp_Events_Helper::get_event($post->ID);
+		$now = time();
+
+		// pega o time do dia
+		$start_day = strtotime(date("d M Y", $event->start));
+		
+		if($start_day >= $today and $start_day <= $tomorrow) {
+			$output[] = $event;
+		}
+	}
+
+	header('content-type: application/json');
+	print json_encode($output);
+	die;
+}
+
 $events = array();
+
+// Range de init padrão (3 dias atrás)
+$range_init = strtotime(date("d-m-Y",time())) - (60*60*24*3);
+$range_end = strtotime(date("d-m-Y",time())) + (60*60*24);
 
 query_posts("post_type=calp_event&posts_per_page=-1"); ?>
 <?php if(have_posts()): while(have_posts()): the_post(); ?>	
@@ -23,19 +65,14 @@ query_posts("post_type=calp_event&posts_per_page=-1"); ?>
 		$event = Calp_Events_Helper::get_event(get_the_ID());
 
 		echo "<!-- INICIO EVENTO: " . $post->ID . "-->\n";
-
-		// Range de init padrão (3 dias atrás)
-		$range_init = strtotime(date("d-m-Y",time())) - (60*60*24*3);
-		$range_end = strtotime(date("d-m-Y",time())) - (60*60*24);
-
+		
 		// caso tenha sido preenchido manualmente a data de início, da prioridade pra essa data
 		$timestamp_day_start_priority = get_post_meta($post->ID, 'tv_inicio', true);
 		if(!empty($timestamp_day_start_priority)) {
-			
+
+			$timestamp_day_start_priority = str_replace("/", " ", $timestamp_day_start_priority);
 			$timestamp_day_start = strtotime($timestamp_day_start_priority);
 
-			// Range de init é hoje, pois a data é especificada manualmente
-			$range_init = strtotime(date("d-m-Y",time()));
 		} else {
 			
 			$timestamp_day_start = strtotime(date("d-m-Y", $event->start));
@@ -44,24 +81,16 @@ query_posts("post_type=calp_event&posts_per_page=-1"); ?>
 		echo "<!-- range_init: " . date("d/m/Y", $range_init) . "-->\n";
 		echo "<!-- day_start : " . date("d/m/Y", $timestamp_day_start) . "-->\n";
 
-		// caso tenha sido preenchido manualmente a data final, da prioridade pra essa data
-		$timestamp_day_end_priority = get_post_meta($post->ID, 'tv_final', true);
-		if(!empty($timestamp_day_end_priority)) {
+		// day end
+		$timestamp_day_end = $timestamp_day_start;
 
-			$timestamp_day_end = strtotime($timestamp_day_end_priority);
-			$range_end = strtotime(date("d-m-Y",time()));
-		} else {
-
-			$timestamp_day_end = strtotime(date("d-m-Y", $event->end));
-		}
-
-		echo "<!-- range_end: " . date("d/m/Y", $range_end) . "-->\n";
-		echo "<!-- day_end : " . date("d/m/Y", $timestamp_day_end) . "-->\n";
+		echo "<!-- day_end   : " . date("d/m/Y", $timestamp_day_end) . "-->\n";
+		echo "<!-- range_end : " . date("d/m/Y", $range_end) . "-->\n";
 		
 		echo "<!-- FIM EVENTO: " . $post->ID . "-->\n\n";
 
 		// se a data do evento estiver dentro do range, adiciona ao event
-		if(!($range_init <= $timestamp_day_start and $range_end <= $timestamp_day_end)) {
+		if(!($range_init <= $timestamp_day_start and $range_end >= $timestamp_day_end)) {
 			continue;
 		}
 
@@ -76,20 +105,6 @@ query_posts("post_type=calp_event&posts_per_page=-1"); ?>
 	?>
 <?php endwhile; endif; 
 
-// webservice para ser consumido pelo crontab que envia email com relatorio
-if(isset($_GET['type']) and $_GET['type'] == "json") {
-
-	$output = array();
-	foreach($events as $event) {
-
-		if(date('d-m-Y') == date("d-m-Y", $event->start)) {
-			$output[] = $event;
-		}
-	}
-
-	print json_encode($output);
-	die;
-}
 
 get_header('tv'); ?>
 
