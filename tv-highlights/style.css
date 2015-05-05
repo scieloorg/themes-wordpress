@@ -59,7 +59,7 @@ body .site {margin-top: 0; box-shadow:none; background: none;}
 .excerpt-label {display: inline-block;vertical-align: top;margin-right:4px;}
 .excerpt-content {display: inline-block;width: 80%;}
 
-.widget-area #s {background: #e8e8e8; border: none; -webkit-border-radius: 8px 0px 0px 8px; border-radius: 8px 0px 0px 8px; width: 67.5%;padding:7px;}
+.widget-area #s {background: #e8e8e8; border: none; -webkit-border-radius: 8px 0px 0px 8px; border-radius: 8px 0px 0px 8px; width: 64.5%;padding:7px;}
 .widget-area #searchsubmit {margin-left: -8px; background: #e05c4e; border: none; color:#fff; font-weight: 500; -webkit-border-radius:0px 8px 8px 0px; border-radius: 0px 8px 8px 0px;}
 
 #wp-calendar caption, #wp-calendar th, #wp-calendar td {text-align: center; color: #fff; border-bottom: 1px solid #fff;}
