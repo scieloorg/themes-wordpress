@@ -17,7 +17,7 @@ if(isset($_GET['type']) and $_GET['type'] == "json") {
 	
 	$today = strtotime(date("d M Y"));
 	$tomorrow = $today + (24 * 60 * 60);
-
+	
 	if(isset($_GET['period']) and $_GET['period'] == 'nextweek') {
 	
 		$tomorrow = $today + (7 * 24 * 60 * 60);
@@ -39,7 +39,7 @@ if(isset($_GET['type']) and $_GET['type'] == "json") {
 
 		// pega o time do dia
 		$start_day = strtotime(date("d M Y", $event->start));
-		
+
 		if($start_day >= $today and $start_day <= $tomorrow) {
 			$output[] = $event;
 		}
@@ -52,19 +52,16 @@ if(isset($_GET['type']) and $_GET['type'] == "json") {
 
 $events = array();
 
-// Range de init padrão (3 dias atrás)
-$range_init = strtotime(date("d-m-Y",time())) - (60*60*24*3);
-$range_end = strtotime(date("d-m-Y",time())) + (60*60*24);
+// Range de init padrão (3 dias antes)
+$range_init = strtotime(date("d-m-Y",time())) - (60*60*24);
+$range_end = strtotime(date("d-m-Y",time())) + (3*60*60*24);
 
-query_posts("post_type=calp_event&posts_per_page=-1"); ?>
-<?php if(have_posts()): while(have_posts()): the_post(); ?>	
+foreach(get_posts("post_type=calp_event&posts_per_page=-1") as $post): ?>	
 
 	<?php
 		// pega os atributos do evento
-		$post = get_post(get_the_ID());
 		$event = Calp_Events_Helper::get_event(get_the_ID());
 
-		echo "<!-- INICIO EVENTO: " . $post->ID . "-->\n";
 		
 		// caso tenha sido preenchido manualmente a data de início, da prioridade pra essa data
 		$timestamp_day_start_priority = get_post_meta($post->ID, 'tv_inicio', true);
@@ -78,16 +75,8 @@ query_posts("post_type=calp_event&posts_per_page=-1"); ?>
 			$timestamp_day_start = strtotime(date("d-m-Y", $event->start));
 		}
 
-		echo "<!-- range_init: " . date("d/m/Y", $range_init) . "-->\n";
-		echo "<!-- day_start : " . date("d/m/Y", $timestamp_day_start) . "-->\n";
-
 		// day end
 		$timestamp_day_end = $timestamp_day_start;
-
-		echo "<!-- day_end   : " . date("d/m/Y", $timestamp_day_end) . "-->\n";
-		echo "<!-- range_end : " . date("d/m/Y", $range_end) . "-->\n";
-		
-		echo "<!-- FIM EVENTO: " . $post->ID . "-->\n\n";
 
 		// se a data do evento estiver dentro do range, adiciona ao event
 		if(!($range_init <= $timestamp_day_start and $range_end >= $timestamp_day_end)) {
@@ -101,10 +90,17 @@ query_posts("post_type=calp_event&posts_per_page=-1"); ?>
 			$events[$event->start] = $event;
 		}
 
+		echo "<!-- INICIO EVENTO: " . $post->post_title . "-->\n";
+		echo "<!-- range_init: " . date("d/m/Y", $range_init) . "-->\n";
+		echo "<!-- day_start : " . date("d/m/Y", $timestamp_day_start) . "-->\n";
+		echo "<!-- day_end   : " . date("d/m/Y", $timestamp_day_end) . "-->\n";
+		echo "<!-- range_end : " . date("d/m/Y", $range_end) . "-->\n";
+		echo "<!-- FIM EVENTO: " . $post->ID . "-->\n\n";
 		
 	?>
-<?php endwhile; endif; 
+<?php endforeach;
 
+// var_dump($events);
 
 get_header('tv'); ?>
 
@@ -128,11 +124,10 @@ $(function(){
 
 					<div class="slideshow">
 		
-						<?php ksort($events); foreach($events as $event): the_post($event->post->post_id); ?>
+						<?php ksort($events); foreach($events as $event): the_post($event->post->post_id); $post = $event->post; ?>
 							<div class="event-item">
 								
-								<article class="post-208 page type-page status-publish hentry" style="background: url(<?php $image_id = get_post_thumbnail_id();
-$image_url = wp_get_attachment_image_src($image_id,'full', true); echo $image_url[0];?>) no-repeat;">
+								<article class="post-208 page type-page status-publish hentry" style="background: url(<?php $image_id = get_post_thumbnail_id(); $image_url = wp_get_attachment_image_src($image_id,'full', true); echo $image_url[0];?>) no-repeat;">
 								<!--article class="calp-date "-->
 									<div class="gradient">
 										<div class="post-info">
@@ -143,7 +138,7 @@ $image_url = wp_get_attachment_image_src($image_id,'full', true); echo $image_ur
 													<!-- <span class="calp-widget-allday">(all-day)</span> -->
 												</div>
 												<h4 class="entry-title"><span class="calp-event-title">
-													<?php the_title(); ?>
+													<?php echo $post->post_title; ?>
 												</span></h4>
 											</header>
 
