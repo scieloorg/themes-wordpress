@@ -142,7 +142,8 @@ $(function(){
 												</span></h4>
 											</header>
 
-											<div class="entry-summary"><?php the_content(); ?>
+											<div class="entry-summary">
+												<?php echo $event->post->post_content; ?>
 												<!--div class="img"><?php the_post_thumbnail(); ?></div-->
 											</div>
 										</div>

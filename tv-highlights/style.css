@@ -82,7 +82,7 @@ body .site {margin-top: 0; box-shadow:none; background: none;}
 .tv .event-date {font-size: 2em; font-weight: 300;}
 .tv .time-range {font-size: 1.5em;margin-top:.5em;}
 .tv .entry-title {margin-top:30px; line-height: 280%;}
-.tv .entry-title .calp-event-title {font-size: 3em !important; margin-bottom: 0 !important;}
+.tv .entry-title .calp-event-title {font-size: 4em !important; margin-bottom: 0 !important;}
 .tv .entry-title a {text-decoration: none; color:#000;}
 .tv .entry-summary {font-size:3em; height: 250px !important; overflow: hidden;}
 .tv .post-info {margin:80px 100px;width:80% !important;}
