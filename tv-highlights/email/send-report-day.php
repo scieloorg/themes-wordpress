@@ -23,7 +23,7 @@ $phpmailer->Password = $GMAIL_PASSWORD;        // Gmail account password
 
 $phpmailer->SetFrom($FROM_EMAIL, $FROM_NAME); //set from name
 
-$phpmailer->Subject = "Próximos Eventos";
+$phpmailer->Subject = "SciELO - Eventos do dia";
 
 $body = "Bom dia, <br><br>";
 $body .= "Os eventos do dia da equipe SciELO são: <br><br>";
