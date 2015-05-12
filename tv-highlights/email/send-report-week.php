@@ -33,7 +33,7 @@ $content = file_get_contents($URL_PAGETV . "?type=json&period=nextweek");
 foreach(json_decode($content) as $event) {
 
 	$start_date = date("d/m/Y \à\s H:i", $event->start);
-	$body .= "<p><strong>" . "[$start_date]" . "</strong>" .  $event->post->post_title . "</p>";
+	$body .= "<p>" . "[$start_date]" . "<strong>" . " - " . $event->post->post_title . "</strong></p>";
 }
 
 $body .= "<br/>Atenciosamente, <br/>";
