@@ -25,18 +25,18 @@ $phpmailer->SetFrom($FROM_EMAIL, $FROM_NAME); //set from name
 
 $phpmailer->Subject = "SciELO - Eventos do dia";
 
-$body = "Bom dia, <br><br>";
-$body .= "Os eventos do dia da equipe SciELO são: <br><br>";
+$body = "Bom dia, <br/><br/>";
+$body .= "Os eventos do dia da equipe SciELO são: <br/><br/>";
 
-$content = file_get_contents($URL_PAGETV . "/?type=json");
+$content = file_get_contents($URL_PAGETV . "?type=json");
 foreach(json_decode($content) as $event) {
 
 	$start_date = date("d/m/Y \à\s H:i", $event->start);
-	$body .= "[$start_date] " .  $event->post->post_title . "<br>";
+	$body .= "<p><strong>" . "[$start_date] " . "</strong>" .  $event->post->post_title . "</p>";
 }
 
-$body .= "<br>Atenciosamente, <br>";
-$body .= "SciELO Eventos<br>";
+$body .= "<br/>Atenciosamente, <br/>";
+$body .= "SciELO Eventos<br/>";
 
 $phpmailer->AddAddress($TO_EMAIL, $TO_NAME);
 

@@ -23,21 +23,21 @@ $phpmailer->Password = $GMAIL_PASSWORD;        // Gmail account password
 
 $phpmailer->SetFrom($FROM_EMAIL, $FROM_NAME); //set from name
 
-$phpmailer->Subject = "SciELO - Eventos da semana";
+$phpmailer->Subject = "SciELO - Eventos da Semana";
 
-$body = "Bom dia, <br><br>";
-$body .= "Os eventos desta semana da equipe SciELO são: <br><br>";
+$body = "Bom dia, <br/><br/>";
+$body .= "Os eventos desta semana da equipe SciELO são: <br/><br/>";
 
 // (use lastweek ao invés de nextweek no parâmetro period para pegar os eventos dos últimos 7 dias)
-$content = file_get_contents($URL_PAGETV . "/?type=json&period=nextweek");
+$content = file_get_contents($URL_PAGETV . "?type=json&period=nextweek");
 foreach(json_decode($content) as $event) {
 
 	$start_date = date("d/m/Y \à\s H:i", $event->start);
-	$body .= "[$start_date] " .  $event->post->post_title . "<br>";
+	$body .= "<p><strong>" . "[$start_date]" . "</strong>" .  $event->post->post_title . "</p>";
 }
 
-$body .= "<br>Atenciosamente, <br>";
-$body .= "SciELO Eventos<br>";
+$body .= "<br/>Atenciosamente, <br/>";
+$body .= "SciELO Eventos<br/>";
 
 $phpmailer->AddAddress($TO_EMAIL, $TO_NAME);
 
