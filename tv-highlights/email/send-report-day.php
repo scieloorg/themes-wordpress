@@ -4,11 +4,15 @@
 $FROM_NAME = "SciELO NEWS";
 $FROM_EMAIL = "eventos@scielo.org";
 $TO_NAME = "Administrador do SciELo Eventos";
-$TO_EMAIL = "anderson.attilio@scielo.org";
+$TO_EMAIL = "luis.gomes@scielo.org";
 $GMAIL_USERNAME = "suporte.aplicacao@scielo.org";
 $GMAIL_PASSWORD = "iPhepae2";
 $URL_PAGETV = "http://news.scielo.org/tv/";
 
+$content = file_get_contents($URL_PAGETV . "?type=json");
+if(empty(json_decode($content,1))) {
+	die;
+}
 //include the file
 require_once('PHPMailerAutoload.php');
 
