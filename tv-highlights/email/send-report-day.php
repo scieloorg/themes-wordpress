@@ -1,4 +1,6 @@
 <?php
+mb_internal_encoding("UTF-8");
+mb_http_output( "UTF-8" );
 
 // Alterar de acordo com as configurações locais
 $FROM_NAME = "SciELO NEWS";
@@ -10,11 +12,14 @@ $GMAIL_PASSWORD = "iPhepae2";
 $URL_PAGETV = "http://news.scielo.org/tv/";
 
 // adicionado por jtak
-$content = file_get_contents($URL_PAGETV . "?type=json&period=day");
-if(empty(json_decode($content,1))) {
-	die;
-}
+$content = file_get_contents($URL_PAGETV . "?type=json");
 
+$json_str = json_decode($content,1);
+
+if(empty($json_str)) {
+	echo "Não há eventos para este período";
+    die;
+}
 
 //include the file
 require_once('PHPMailerAutoload.php');

@@ -1,19 +1,26 @@
 <?php
+mb_internal_encoding("UTF-8");
+mb_http_output( "UTF-8" );
 
 // Alterar de acordo com as configurações locais
 $FROM_NAME = "SciELO NEWS";
 $FROM_EMAIL = "eventos@scielo.org";
 $TO_NAME = "Administrador do SciELo Eventos";
-$TO_EMAIL = "luis.gomes@scielo.org";
+$TO_EMAIL = "juliotak@gmail.com";
 $GMAIL_USERNAME = "suporte.aplicacao@scielo.org";
 $GMAIL_PASSWORD = "iPhepae2";
 $URL_PAGETV = "http://news.scielo.org/tv/";
 
 // adicionado por jtak
 $content = file_get_contents($URL_PAGETV . "?type=json&period=week");
-if(empty(json_decode($content,1))) {
-	die;
+
+$json_str = json_decode($content,1);
+
+if(empty($json_str)) {
+	echo "Não há eventos para este período";
+    die;
 }
+
 //include the file
 require_once('PHPMailerAutoload.php');
 
