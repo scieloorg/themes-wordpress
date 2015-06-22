@@ -1,30 +1,29 @@
 <?php
-mb_internal_encoding("UTF-8");
-mb_http_output( "UTF-8" );
 
 // Alterar de acordo com as configurações locais
 $FROM_NAME = "SciELO NEWS";
-$FROM_EMAIL = "eventos@scielo.org";
+$FROM_EMAIL = "anderson.attilio@scielo.org";
 $TO_NAME = "Administrador do SciELo Eventos";
-$TO_EMAIL = "juliotak@gmail.com";
+$TO_EMAIL = "equipe@scielo.org";
 $GMAIL_USERNAME = "suporte.aplicacao@scielo.org";
 $GMAIL_PASSWORD = "iPhepae2";
 $URL_PAGETV = "http://news.scielo.org/tv/";
 
 // adicionado por jtak
-$content = file_get_contents($URL_PAGETV . "?type=json");
+$content = file_get_contents($URL_PAGETV . "?type=json&period=day");
 
 $json_str = json_decode($content,1);
 
 if(empty($json_str)) {
-	echo "Não há eventos para este período";
-    die;
+	die;
 }
+
 
 //include the file
 require_once('PHPMailerAutoload.php');
 
 $phpmailer = new PHPMailer();
+$phpmailer->CharSet = 'UTF-8';
 
 $phpmailer->IsSMTP(); // telling the class to use SMTP
 $phpmailer->Host = "ssl://smtp.gmail.com"; // SMTP server
