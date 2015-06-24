@@ -18,13 +18,11 @@ if(empty($json_str)) {
 	die;
 }
 
-
 //include the file
 require_once('PHPMailerAutoload.php');
 
 $phpmailer = new PHPMailer();
 $phpmailer->CharSet = 'UTF-8';
-
 $phpmailer->IsSMTP(); // telling the class to use SMTP
 $phpmailer->Host = "ssl://smtp.gmail.com"; // SMTP server
 $phpmailer->SMTPAuth = true;                  // enable SMTP authentication
@@ -39,11 +37,11 @@ $phpmailer->Subject = "SciELO - Eventos do dia";
 $body = "Bom dia, <br/><br/>";
 $body .= "Os eventos do dia da equipe SciELO são: <br/><br/>";
 
-$content = file_get_contents($URL_PAGETV . "?type=json");
+$content = file_get_contents($URL_PAGETV . "?type=json&period=day");
 foreach(json_decode($content) as $event) {
 
 	$start_date = date("d/m/Y \à\s H:i", $event->start);
-	$body .= "<p>" . "[$start_date]" . "<strong>" . " - " . $event->post->post_title . "</strong></p>";
+	$body .= "<p>" . "$start_date" . "<br/>" . "<strong style='font-size:120%;'>" . $event->post->post_title . "</strong>" . "<br/>" . $event->post->post_content . "</p>";
 }
 
 $body .= "<br/>Atenciosamente, <br/>";

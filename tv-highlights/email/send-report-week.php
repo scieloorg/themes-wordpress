@@ -1,6 +1,5 @@
 <?php
 
-
 // Alterar de acordo com as configurações locais
 $FROM_NAME = "SciELO NEWS";
 $FROM_EMAIL = "anderson.attilio@scielo.org";
@@ -16,7 +15,7 @@ $content = file_get_contents($URL_PAGETV . "?type=json&period=nextweek");
 $json_str = json_decode($content,1);
 
 if(empty($json_str)) {
-        die;
+    die;
 }
 
 //include the file
@@ -43,7 +42,7 @@ $content = file_get_contents($URL_PAGETV . "?type=json&period=nextweek");
 foreach(json_decode($content) as $event) {
 
 	$start_date = date("d/m/Y \à\s H:i", $event->start);
-	$body .= "<p>" . "[$start_date]" . "<strong>" . " - " . $event->post->post_title . "</strong></p>";
+	$body .= "<p>" . "$start_date" . "<br/>" . "<strong style='font-size:120%;'>" . $event->post->post_title . "</strong>" . "<br/>" . $event->post->post_content . "</p>";
 }
 
 $body .= "<br/>Atenciosamente, <br/>";
