@@ -10,7 +10,7 @@ $GMAIL_PASSWORD = "iPhepae2";
 $URL_PAGETV = "http://news.scielo.org/tv/";
 
 // adicionado por jtak
-$content = file_get_contents($URL_PAGETV . "?type=json&period=day");
+$content = file_get_contents($URL_PAGETV . "?type=json&period");
 
 $json_str = json_decode($content,1);
 
@@ -37,7 +37,7 @@ $phpmailer->Subject = "SciELO - Eventos do dia";
 $body = "Bom dia, <br/><br/>";
 $body .= "Os eventos do dia da equipe SciELO são: <br/><br/>";
 
-$content = file_get_contents($URL_PAGETV . "?type=json&period=day");
+$content = file_get_contents($URL_PAGETV . "?type=json&period");
 foreach(json_decode($content) as $event) {
 
 	$start_date = date("d/m/Y \à\s H:i", $event->start);
