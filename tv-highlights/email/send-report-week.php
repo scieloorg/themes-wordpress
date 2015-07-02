@@ -1,5 +1,5 @@
 <?php
-
+date_default_timezone_set("Brazil/East");
 // Alterar de acordo com as configurações locais
 $FROM_NAME = "SciELO NEWS";
 $FROM_EMAIL = "anderson.attilio@scielo.org";
