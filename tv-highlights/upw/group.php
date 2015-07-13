@@ -27,11 +27,11 @@
         <?php 
           $current_date = get_the_time();
           if ($current_date != $previous_date){
-            echo '<div class="date-block">';
-            echo '<div class="pub-wd">' . get_the_time('l') . '</div>';
-            echo '<div class="pub-d">' . get_the_time('d') . '</div>';
-            echo '<div class="pub-m">' . get_the_time('M') . '</div>';
-            echo '</div>';
+          //  echo '<div class="date-block">';
+          //  echo '<div class="pub-wd">' . get_the_time('l') . '</div>';
+          //  echo '<div class="pub-d">' . get_the_time('d') . '</div>';
+          //  echo '<div class="pub-m">' . get_the_time('M') . '</div>';
+          //  echo '</div>';
           }
           $previous_date = $current_date
         ?>

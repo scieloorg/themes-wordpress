@@ -59,7 +59,7 @@ body .site {margin-top: 0; box-shadow:none; background: none;}
 .excerpt-label {display: inline-block;vertical-align: top;margin-right:4px;}
 .excerpt-content {display: inline-block;width: 80%;}
 
-.widget-area #s {background: #e8e8e8; border: none; -webkit-border-radius: 8px 0px 0px 8px; border-radius: 8px 0px 0px 8px; width: 67.5%;padding:7px;}
+.widget-area #s {background: #e8e8e8; border: none; -webkit-border-radius: 8px 0px 0px 8px; border-radius: 8px 0px 0px 8px; width: 64.5%;padding:7px;}
 .widget-area #searchsubmit {margin-left: -8px; background: #e05c4e; border: none; color:#fff; font-weight: 500; -webkit-border-radius:0px 8px 8px 0px; border-radius: 0px 8px 8px 0px;}
 
 #wp-calendar caption, #wp-calendar th, #wp-calendar td {text-align: center; color: #fff; border-bottom: 1px solid #fff;}
@@ -79,33 +79,36 @@ body .site {margin-top: 0; box-shadow:none; background: none;}
 .tv .wrapper {margin-top: -15px;}
 .tv .site-content {float: none;width: 100%; margin: 0;}
 .tv .published {font-size: 2em;}
-.tv .entry-title {font-size: 5em; margin-bottom: 0 !important;}
+.tv .event-date {font-size: 2em; font-weight: 300;}
+.tv .time-range {font-size: 1.5em;margin-top:.5em;}
+.tv .entry-title {margin-top:30px; line-height: 280%;}
+.tv .entry-title .calp-event-title {font-size: 4em !important; margin-bottom: 0 !important;}
 .tv .entry-title a {text-decoration: none; color:#000;}
-.tv .entry-summary {font-size:3em;}
+.tv .entry-summary {font-size:3em; height: 250px !important; overflow: hidden;}
 .tv .post-info {margin:80px 100px;width:80% !important;}
 .tv article {display: block;width: 1450px;height: 540px;margin-bottom:0px !important;border-bottom: none !important;}
 .tv .gradient {
-	display: block;width: 1450px;height: 540px;
-background: -moz-linear-gradient(top,  rgba(255,255,255,1) 9%, rgba(255,255,255,0.79) 28%, rgba(255,255,255,0) 100%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, left bottom, color-stop(9%,rgba(255,255,255,1)), color-stop(28%,rgba(255,255,255,0.79)), color-stop(100%,rgba(255,255,255,0))); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 9%,rgba(255,255,255,0.79) 28%,rgba(255,255,255,0) 100%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(top,  rgba(255,255,255,1) 9%,rgba(255,255,255,0.79) 28%,rgba(255,255,255,0) 100%); /* Opera 11.10+ */
-background: -ms-linear-gradient(top,  rgba(255,255,255,1) 9%,rgba(255,255,255,0.79) 28%,rgba(255,255,255,0) 100%); /* IE10+ */
-background: linear-gradient(to bottom,  rgba(255,255,255,1) 9%,rgba(255,255,255,0.79) 28%,rgba(255,255,255,0) 100%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9 */
-
-
+	display: block;width: 1450px;height: 1000px;
+	background: -moz-linear-gradient(top,  rgba(255,255,255,1) 9%, rgba(255,255,255,0.79) 28%, rgba(255,255,255,0) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(9%,rgba(255,255,255,1)), color-stop(28%,rgba(255,255,255,0.79)), color-stop(100%,rgba(255,255,255,0))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 9%,rgba(255,255,255,0.79) 28%,rgba(255,255,255,0) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(255,255,255,1) 9%,rgba(255,255,255,0.79) 28%,rgba(255,255,255,0) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(255,255,255,1) 9%,rgba(255,255,255,0.79) 28%,rgba(255,255,255,0) 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  rgba(255,255,255,1) 9%,rgba(255,255,255,0.79) 28%,rgba(255,255,255,0) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9 */
 }
+.tv .calp-agenda-widget-view {padding: 0 !important;}
 .tv footer {display: none;}
+.tv .calp-container {display: none;}
 
 .right-block {width: 25%; float:right; height: 120px;}
-.right-block .date-block {margin: 40px 0;width: 35%;}
+.right-block .date-block {margin: 24px 0;width: 35%;}
 .right-block .date-block .time {text-align: center; font-size: 180%;}
 .right-block .widget_text {float: left;}
 
 
 #wpc-weather {font-family: 'Roboto', sans-serif !important;margin: 4px 0 0 0;}
 #wpc-weather .location_name {font-size: 100% !important;}
-#wpc-weather .climacon {margin-top:-8px;}
-#wpc-weather .time_temperature {margin-top:-39px;}
+#wpc-weather .time_temperature {margin-top:-46px;}
 #wpc-weather .short_condition {font-size: 12px;margin: 0px 0;}
+#wpc-weather .infos {display: none;}
