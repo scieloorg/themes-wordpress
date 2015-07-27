@@ -29,7 +29,7 @@ if(isset($_GET['type']) and $_GET['type'] == "json") {
 
 	}
 
-	$posts = get_posts("post_type=calp_event&posts_per_page=-1");
+	$posts = get_posts("post_type=calp_event&posts_per_page=-1&orderby=start&order=ASC");
 
 	$output = array();
 	foreach($posts as $post) {
