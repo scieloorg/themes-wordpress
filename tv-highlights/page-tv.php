@@ -40,7 +40,7 @@ if(isset($_GET['type']) and $_GET['type'] == "json") {
 		// pega o time do dia
 		$start_day = strtotime(date("d M Y", $event->start));
 
-		if($start_day >= $today and $start_day <= $tomorrow) {
+		if($start_day >= $today and $start_day < $tomorrow) {
 			$output[] = $event;
 		}
 	}
