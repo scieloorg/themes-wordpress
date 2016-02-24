@@ -6,7 +6,7 @@ $FROM_EMAIL = "anderson.attilio@scielo.org";
 $TO_NAME = "Administrador do SciELo Eventos";
 $TO_EMAIL = "equipe@scielo.org";
 $GMAIL_USERNAME = "suporte.aplicacao@scielo.org";
-$GMAIL_PASSWORD = "iPhepae2";
+$GMAIL_PASSWORD = "******";
 $URL_PAGETV = "http://news.scielo.org/tv/";
 
 // adicionado por jtak
